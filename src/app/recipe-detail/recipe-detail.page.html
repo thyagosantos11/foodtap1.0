@@ -24,19 +24,19 @@
   </div>
   <div class="recipe-detail-content">
     
-    <h1 class="recipe-title">{{ receita.nome }}</h1>
+    <h1 class="recipe-title" appHighlight="">{{ receita.nome }}</h1>
     
     <img [src]="receita.imagemUrl" [alt]="receita.nome" class="recipe-image">
 
     <div class="section">
-      <h2 class="section-title">-Ingredientes</h2>
+      <h2 class="section-title"  backAppHighlight="">-Ingredientes</h2>
       <ul class="ingredients-list">
         <li *ngFor="let item of receita.ingredientes.split('\n')">{{ item }}</li>
       </ul>
     </div>
     
     <div class="section">
-      <h2 class="section-title">-Modo de Preparo</h2>
+      <h2 class="section-title"  backAppHighlight="">-Modo de Preparo</h2>
       <ol class="preparation-steps">
         <li *ngFor="let step of receita.preparo.split('\n')">{{ step }}</li>
       </ol>

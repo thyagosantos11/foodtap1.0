@@ -8,14 +8,21 @@ import { RecipeDetailPageRoutingModule } from './recipe-detail-routing.module';
 
 import { RecipeDetailPage } from './recipe-detail.page';
 import { BypassSecurityTrustResourceUrlPipe } from '../pipes/bypassSecurityTrustResourceUrl.pipe';
+import { HighlightDirective } from '../directives/highlight.directive';
+import { BackHighlightDirective } from '../directives/backhighligth.directive';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RecipeDetailPageRoutingModule
+    RecipeDetailPageRoutingModule,
+    HighlightDirective,
+    BackHighlightDirective
   ],
-  declarations: [RecipeDetailPage, BypassSecurityTrustResourceUrlPipe]
+  declarations: [
+    RecipeDetailPage,
+    BypassSecurityTrustResourceUrlPipe,
+  ]
 })
 export class RecipeDetailPageModule {}

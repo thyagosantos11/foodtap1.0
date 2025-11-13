@@ -1,24 +1,26 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 @Directive({
-  selector: '[appHighlight]'
+  selector: '[backAppHighlight]'
 })
-export class HighlightDirective {
-  @Input() highlightColor: string = '#a77821ff';
-  @Input() normalColor: string = '#000000';
-  
+export class BackHighlightDirective {
+  @Input() highlightBackColor: string = '#c0ac9bff';
+  @Input() normalBackColor: string = '#ffffffff';
 
-  private initialColor: string = '';
+  private initialBackColor: string = '';
 
   constructor(private el: ElementRef) {}
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.el.nativeElement.style.color = this.highlightColor;
-    this.el.nativeElement.style.transition = 'color 0.3s ease';
+    this.el.nativeElement.style.backgroundColor = this.highlightBackColor;
+    this.el.nativeElement.style.transition = 'background-color 0.3s ease';
     this.el.nativeElement.style.cursor = 'pointer';
+    this.el.nativeElement.style.borderRadius = '12px'; 
+    this.el.nativeElement.style.padding = '8px 16px'; 
+
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.el.nativeElement.style.color = this.normalColor;
+    this.el.nativeElement.style.backgroundColor = this.normalBackColor;
   }
 
   @HostListener('mousedown') onMouseDown() {
