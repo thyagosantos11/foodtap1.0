@@ -1,6 +1,6 @@
 <div class="header-container" sthyle="justify-items: center;>
   <p align="left">
-    <img img width="500" height="500" alt="logo-foodtap" src="https://github.com/user-attachments/assets/db9cd642-3e6d-429a-8bea-5d9a5c9f062a" style="vertical-align: middle;">
+    <img img width="500" height="500" alt="logo-foodtap" src="https://github.com/user-attachments/assets/db9cd642-3e6d-429a-8bea-5d9a5c9f062a" style="display: flex;">
     <span style="font-size: 26px; font-weight: bold; margin-left: 10px;">
       FoodTap é um aplicativo desenvolvido com Ionic + Angular, focado na navegação simples e no consumo dinâmico de dados externos. O projeto integra recursos modernos do framework, incluindo diretivas personalizadas, pipes, serviços
       reutilizáveis e comunicação entre páginas por meio de parâmetros de rota.
