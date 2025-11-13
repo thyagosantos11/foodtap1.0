@@ -1,5 +1,5 @@
 <div style="display: flex; align-items: center; gap: 15px;">
-  <img width="120" alt="logo-foodtap" src="https://github.com/user-attachments/assets/db9cd642-3e6d-429a-8bea-5d9a5c9f062a">
+  <img width="500" alt="logo-foodtap" src="https://github.com/user-attachments/assets/db9cd642-3e6d-429a-8bea-5d9a5c9f062a">
   <h1>🥘 FoodTap — Aplicativo em Ionic/Angular</h1>
 </div>
 
