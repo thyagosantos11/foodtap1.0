@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title> 
+      <div class="container-title">
+        <div class="nome-title">
+          <ion-icon name="restaurant-outline"></ion-icon>
+        </div>
+    </div>    
+    </ion-title> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="receita">
+  <div class="animated-bg">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+  <div class="recipe-detail-content">
+    
+    <h1 class="recipe-title">{{ receita.nome }}</h1>
+    
+    <img [src]="receita.imagemUrl" [alt]="receita.nome" class="recipe-image">
+
+    <div class="section">
+      <h2 class="section-title">-Ingredientes</h2>
+      <ul class="ingredients-list">
+        <li *ngFor="let item of receita.ingredientes.split('\n')">{{ item }}</li>
+      </ul>
+    </div>
+    
+    <div class="section">
+      <h2 class="section-title">-Modo de Preparo</h2>
+      <ol class="preparation-steps">
+        <li *ngFor="let step of receita.preparo.split('\n')">{{ step }}</li>
+      </ol>
+    </div>
+
+    <div class="video-container" *ngIf="receita.videoUrl">
+      <h2 class="section-title">-Vídeo da Receita</h2>
+      <div class="iframe-wrapper">
+        <iframe 
+          [src]="receita.videoUrl! | bypassSecurityTrustResourceUrl" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="section ratings-section">
+      <h2 class="section-title">-Avaliações</h2>
+      
+      <div class="average-rating" *ngIf="avaliacoes.length > 0">
+        <div class="rating-info">
+          <span class="rating-value">{{ obterNotaMedia() }}</span>
+          <span>/5</span>
+          <span class="rating-count">({{ avaliacoes.length }})</span>
+        </div>
+      </div>
+
+      <div class="add-review">
+        <h3>Deixe sua avaliação:</h3>
+        <ion-item>
+          <ion-label position="stacked">Nome</ion-label>
+          <ion-input [(ngModel)]="novaAvaliacao.nome" placeholder="Seu nome"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Nota (1-5)</ion-label>
+          <ion-range min="1" max="5" [(ngModel)]="novaAvaliacao.nota"></ion-range>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Comentário</ion-label>
+          <ion-textarea [(ngModel)]="novaAvaliacao.comentario" placeholder="Sua opinião..."></ion-textarea>
+        </ion-item>
+        <ion-button (click)="adicionarAvaliacao()" expand="block" color="primary">
+          Enviar
+        </ion-button>
+      </div>
+
+      <div class="reviews">
+        <div *ngIf="avaliacoes.length === 0" class="no-reviews">
+          <p>Nenhuma avaliação ainda.</p>
+        </div>
+        <div *ngFor="let avaliacao of avaliacoes" class="review-item">
+          <div class="review-top">
+            <strong>{{ avaliacao.nome }}</strong>
+            <span class="review-date">{{ avaliacao.data }}</span>
+          </div>
+          <div class="review-rating">★ {{ avaliacao.nota }}/5</div>
+          <p>{{ avaliacao.comentario }}</p>
+          <ion-button fill="clear" size="small" (click)="deletarAvaliacao(avaliacao.id)" color="danger">
+            Deletar
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
+
+<ion-content *ngIf="!receita">
+    <p class="ion-text-center ion-padding">Receita não encontrada.</p>
+</ion-content>

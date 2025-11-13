@@ -1,0 +1,48 @@
+
+<ion-content [fullscreen]="true">
+  <!-- Animated Background -->
+  <div class="animated-bg">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <div class="header-container">
+    <div class="page-title">
+      <ion-icon name="restaurant-outline"></ion-icon>
+      <h1 appHighlight highlightColor="black">FOODTAP</h1>
+    </div>
+
+    <ion-searchbar 
+      animated="true" 
+      placeholder="Pesquisar..."
+      (ionChange)="handleSearch($event)"> 
+    </ion-searchbar>
+  </div>
+
+<ion-grid class="receita-grid">
+  <ion-row>
+    <ion-col size="12" size-md="6" size-lg="4" *ngFor="let receita of receitas">
+      <ion-card class="receita-card" (click)="verDetalhes(receita.nome)">
+        <img [src]="receita.imagemUrl" [alt]="receita.nome" class="receita-img" (error)="onImageError($event)" />
+        <ion-card-header>
+          <ion-card-title>{{ receita.nome | titlecase }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="12" class="ion-text-center" *ngIf="receitas.length === 0">
+      <p>Nenhuma receita encontrada. Tente outro termo!</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+
+</ion-content>

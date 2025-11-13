@@ -1,0 +1,260 @@
+// src/app/recipe-detail/recipe-detail.page.scss
+
+ion-header {
+  ion-toolbar {
+    --background: #fff8f0; // Cor de fundo do header, similar ao home
+    color: #333;
+
+    ion-title {
+      .container-title{
+        background: #fff3e0;
+      border-radius: 8px;
+      border-left: 4px solid #cc6633;
+      border-right: 4px solid #cc6633;
+      text-align: center;
+      }
+
+      .name-title {
+        font-weight: bold;
+        color: #333;
+        text-align: center; // Centraliza o título da toolbar
+      }
+    }
+
+    ion-back-button {
+      --color: #cc6633; // Cor do botão de voltar
+    }
+  }
+}
+
+ion-content {
+  --background: #fff8f0; // Cor de fundo da tela
+
+  .recipe-detail-content {
+    padding: 20px;
+    background-color: #fff8f0; // Garante a cor de fundo
+
+    .recipe-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+
+    .recipe-image {
+      display: block; /* Necessário para o margin: auto funcionar */
+      margin: 0 auto; /* Centraliza horizontalmente */
+      width: 750px;
+      height: 400px; // Altura fixa para a imagem
+      object-fit: cover; // Corta a imagem para preencher
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .video-container {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+
+      .iframe-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; // Proporção 16:9 (9/16 = 0.5625)
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+          border-radius: 8px;
+        }
+      }
+    }
+
+    .section {
+      background-color: #ffffff; // Fundo branco para as seções de texto
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+
+      .section-title {
+        font-size: 22px;
+        font-weight: 600;
+        color: #cc6633; // Cor laranja/marrom para o título da seção
+        margin-top: 0;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #f0f0f0; // Linha sutil abaixo do título
+        padding-bottom: 10px;
+      }
+
+      .ingredients-list,
+      .preparation-steps {
+        margin: 0;
+        padding-left: 20px; // Padding para os marcadores de lista
+        color: #555; // Cor do texto da lista
+        font-size: 16px;
+        line-height: 1.6; // Espaçamento entre as linhas
+
+        li {
+          margin-bottom: 8px;
+
+          // Estiliza os marcadores de lista (bolinhas ou números)
+          &::marker {
+            color: #cc6633; // Cor dos marcadores
+            font-weight: bold;
+          }
+        }
+      }
+
+      .preparation-steps {
+        li {
+          // Garante que os números dos passos tenham a cor desejada
+          &::marker {
+            color: #cc6633;
+          }
+        }
+      }
+    }
+
+    .scroll-down-indicator {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 10px; // Para dar um pouco de espaço no fim
+      ion-icon {
+        font-size: 30px;
+        color: #cc6633;
+        animation: bounce 2s infinite; // Animação de "bounce" para chamar atenção
+      }
+    }
+  }
+}
+
+.ratings-section {
+  .average-rating {
+    background: #fff3e0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-left: 4px solid #cc6633;
+
+    .rating-info {
+      font-size: 18px;
+      font-weight: bold;
+      color: #cc6633;
+
+      .rating-value {
+        font-size: 28px;
+      }
+
+      .rating-count {
+        color: #999;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .add-review {
+    background: #cc6633;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+
+    h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    ion-item {
+      --background: #cc6633;
+      margin-bottom: 10px;
+    }
+
+    ion-button {
+      --background: #cc6633;
+      margin-top: 10px;
+    }
+  }
+
+  .reviews {
+    .no-reviews {
+      text-align: center;
+      color: #999;
+      padding: 20px;
+    }
+
+    .review-item {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+
+      .review-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        strong {
+          color: #333;
+        }
+
+        .review-date {
+          color: #999;
+          font-size: 12px;
+        }
+      }
+
+      .review-rating {
+        color: #ffc107;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      p {
+        color: #555;
+        margin: 8px 0;
+        line-height: 1.4;
+      }
+
+      ion-button {
+        --color: #cc6633;
+      }
+    }
+  }
+}
+
+// Keyframes para a animação de bounce
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+// Estilo para a mensagem de receita não encontrada
+//  ion-content *ngIf="!receita" {
+//   --background: #fff8f0; // Garante a cor de fundo
+//   p {
+//     color: #cc6633;
+//     font-size: 18px;
+//     font-weight: 500;
+//     margin-top: 40px;
+//   }
+// }

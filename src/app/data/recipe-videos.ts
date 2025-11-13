@@ -1,0 +1,22 @@
+export const RECIPE_VIDEOS: { [key: string]: string } = {
+  'bolo-de-chocolate': 'https://www.youtube.com/embed/QFMxJWh3mqE',
+  'frango-agridoce': 'https://www.youtube.com/embed/mPt1Zrkyp2U',
+  'salada-grega': 'https://www.youtube.com/embed/3wJH3dYE8Ng',
+  'panquecas-americanas': 'https://www.youtube.com/embed/XM2KCKj43EY',
+  'quiche-de-espinafre-com-queijo': 'https://www.youtube.com/embed/tVyCniEIDDQ',
+  'curry-de-grao-de-bico': 'https://www.youtube.com/embed/YSeE59idBos',
+  'torta-de-limao': 'https://www.youtube.com/embed/cc8QuY7seFQ',
+  'risoto-de-cogumelos': 'https://www.youtube.com/embed/FQMOlA47ntw',
+  'cookies-de-chocolate': 'https://www.youtube.com/embed/alEjLpIdOQY',
+  'kimbap-coreano-com-lombo-de-porco-e-espinafre': 'https://www.youtube.com/embed/wbKQ_dOQeFc',
+  'tartar-de-atum-com-menta-e-gengibre': 'https://www.youtube.com/embed/cyW15O4xX5k',
+  'tournedos-de-wagyu-com-salsa-de-mirtilo-e-menta': 'https://www.youtube.com/embed/VIDEO_ID_AQUI',
+  'torta-de-salmao-com-miso-e-gengibre': 'https://www.youtube.com/embed/HyozLfSJHGs',
+  'tournedos-de-wagyu-com-molho-de-menta-e-abacate': 'https://www.youtube.com/embed/VIDEO_ID_AQUI',
+  'tartar-de-atum-com-wasabi-e-melao': 'https://www.youtube.com/embed/RZomjqHSoRA',
+  'tournedos-de-wagyu-com-molho-de-salsa-de-caviar-e-mousse-de-trufa': 'https://www.youtube.com/embed/VIDEO_ID_AQUI',
+  'kimbap-coreano': 'https://www.youtube.com/embed/pa8tftk2Y-k',
+  'tournedos-rossini': 'https://www.youtube.com/embed/cp4cPnGKbF0',
+  'risotto-de-trufa-com-caviar': 'https://www.youtube.com/embed/hAGcZfMjrj0',
+  'gyoza-de-frango-com-molho-goma-osak': 'https://www.youtube.com/embed/yt7tFpHPY'
+};
