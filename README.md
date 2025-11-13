@@ -1,4 +1,4 @@
-<div class="header-container" sthyle="justify-items: center;>
+<div class="header-container" style="display: flex;">
   <p align="left">
     <img img width="500" height="500" alt="logo-foodtap" src="https://github.com/user-attachments/assets/db9cd642-3e6d-429a-8bea-5d9a5c9f062a" style="display: flex;">
     <span style="font-size: 26px; font-weight: bold; margin-left: 10px;">
