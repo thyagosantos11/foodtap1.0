@@ -62,7 +62,6 @@ ion-content {
   overflow: hidden;
 }
 
-// Shapes animadas
 .shape {
   position: absolute;
   opacity: 0.08;
@@ -111,7 +110,6 @@ ion-content {
   }
 }
 
-// Blobs animadas (formato mais orgânico)
 .blob {
   position: absolute;
   opacity: 0.06;
@@ -243,7 +241,7 @@ ion-content {
     font-family: 'Times New Roman', Times, serif;
     font-size: 50px;
     font-weight: bold;
-    color: #333; // Cor do texto
+    color: #333; 
     margin: 0;
   }
 }
@@ -255,8 +253,8 @@ ion-searchbar {
   --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   --color: #333;
   --placeholder-color: #999;
-  --icon-color: #d97706; /* tom laranja */
-  width: 80%; /* torna a barra menor */
+  --icon-color: #d97706;
+  width: 80%; 
   max-width: 600px;
   height: 45px;
   font-size: 0.95rem;
@@ -311,13 +309,12 @@ ion-card-content {
   text-align: justify;
 }
 
-/* Animação de toque em mobile */
+
 .receita-card:active {
   transform: scale(0.98);
   transition: transform 0.1s ease;
 }
 
-/* Responsividade */
 @media (min-width: 992px) {
   .receita-card {
     max-width: 360px;

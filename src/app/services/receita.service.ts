@@ -55,22 +55,6 @@ export class ReceitaService {
     );
   }
 
-  /**
-   * Busca uma receita específica pelo nome/ID
-   * @param id Nome ou ID da receita
-   * @returns Observable com a receita
-   */
-  getReceitaById(id: string): Observable<ReceitaExibida> {
-    const url = `${this.apiUrl}/${id}`;
-
-    return this.http.get<ReceitaItem>(url).pipe(
-      tap(response => {
-        console.log('Receita carregada:', response);
-      }),
-      map((item: ReceitaItem) => this.mapearReceita(item)),
-      catchError(this.handleError)
-    );
-  }
 
   /**
    * Mapeia um array de ReceitaItem para ReceitaExibida

@@ -21,17 +21,13 @@ interface ReceitaExibida {
 })
 export class HomePage implements OnInit, OnDestroy {
 
-  // Array exibido no HTML (filtrado)
   receitas: ReceitaExibida[] = []; 
   
-  // Array completo (imutável) para ser a base da busca
   private todasReceitas: ReceitaExibida[] = [];
   
-  // Para controlar o carregamento
   isLoading = true;
   errorMessage = '';
 
-  // Subject para cancelar observables ao destruir o componente
   private destroy$ = new Subject<void>();
 
   constructor(
@@ -44,9 +40,6 @@ export class HomePage implements OnInit, OnDestroy {
     this.carregarReceitas();
   }
 
-  /**
-   * Carrega os dados da API e preenche os arrays 'todasReceitas' e 'receitas'
-   */
   carregarReceitas() {
     this.isLoading = true;
     this.errorMessage = '';
@@ -68,46 +61,32 @@ export class HomePage implements OnInit, OnDestroy {
       });
   }
 
-  /**
-   * Filtra a lista de receitas com base no termo digitado na barra de pesquisa
-   * @param event Evento de mudança da ion-searchbar
-   */
+  
+   
+
   handleSearch(event: any) {
     const termoBusca = event.target.value.toLowerCase();
     
-    // Se o termo de busca estiver vazio, exibe todas as receitas originais
     if (!termoBusca) {
       this.receitas = this.todasReceitas;
       return;
     }
 
-    // Filtra a lista completa (todasReceitas) e atualiza a lista exibida (receitas)
     this.receitas = this.todasReceitas.filter(receita => {
       return receita.nome.toLowerCase().includes(termoBusca);
     });
   }
 
-  /**
-   * Trata erro ao carregar imagem, exibindo uma imagem padrão
-   * @param event Evento de erro da imagem
-   */
   onImageError(event: any) {
     event.target.src = 'assets/icon/placeholder-recipe.svg';
   }
 
-  /**
-   * Navega para a página de detalhes da receita
-   * @param receitaNome Nome da receita
-   */
   verDetalhes(receitaNome: string) {
     const id = receitaNome.toLowerCase().replace(/ /g, '-'); 
     console.log('Navegando para:', '/detalhe', id);
     this.router.navigate(['./detalhe', id], { relativeTo: this.route });
   }
 
-  /**
-   * Limpa subscriptions ao destruir o componente
-   */
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();

@@ -8,7 +8,7 @@ const routes: Routes = [
     component: HomePage,
   },
   {
-    path: 'detalhe/:id', // O ':id' indica que a URL aceitará um parâmetro
+    path: 'detalhe/:id', 
     loadChildren: () => import('../recipe-detail/recipe-detail.module').then( m => m.RecipeDetailPageModule)
   }
 ];

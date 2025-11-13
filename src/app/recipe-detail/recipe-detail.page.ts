@@ -25,7 +25,8 @@ interface Avaliacao {
   nota: number;
   comentario: string;
   data: string;
-}@Component({
+}
+@Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.page.html',
   styleUrls: ['./recipe-detail.page.scss'],

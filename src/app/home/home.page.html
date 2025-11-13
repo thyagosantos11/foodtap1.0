@@ -1,6 +1,5 @@
 
 <ion-content [fullscreen]="true">
-  <!-- Animated Background -->
   <div class="animated-bg">
     <div class="shape shape-1"></div>
     <div class="shape shape-2"></div>
@@ -25,7 +24,7 @@
 
 <ion-grid class="receita-grid">
   <ion-row>
-    <ion-col size="12" size-md="6" size-lg="4" *ngFor="let receita of receitas">
+    <ion-col size="6" size-md="4" size-lg="4" *ngFor="let receita of receitas">
       <ion-card class="receita-card" (click)="verDetalhes(receita.nome)">
         <img [src]="receita.imagemUrl" [alt]="receita.nome" class="receita-img" (error)="onImageError($event)" />
         <ion-card-header>
